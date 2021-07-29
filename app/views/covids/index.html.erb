@@ -1,0 +1,12 @@
+<h1>Do you agree Covid is from Wuhan ?</h1>
+<table>
+  <% @covids.each do |covi| %>
+    <tr>
+      <td><%= covi.name %></td>
+      <td><%= covi.vote_logs.size %></td>
+      <td>
+        <%= link_to 'vote', vote_covid_path(covi.id), method: 'post' %>
+      </td>
+    </td> 
+  <% end %>
+</table>
