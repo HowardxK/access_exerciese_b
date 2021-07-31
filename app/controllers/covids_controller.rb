@@ -8,7 +8,4 @@ class CovidsController < ApplicationController
     @covid.vote_logs.create(ip_address: request.remote_ip)
     redirect_to root_path, notie: 'Voted'
   end
-  
-  
-
 end

@@ -1,12 +1,20 @@
-<h1>Do you agree Covid is from Wuhan ?</h1>
-<table>
-  <% @covids.each do |covi| %>
+<section class="container mt-6">
+  <h1 class="title is-flex is-justify-content-center has-text-weight-light ">Do you agree Covid is from Wuhan ?</h1>
+  <table class="table is-fullwidth has-background-grey-light">
     <tr>
-      <td><%= covi.name %></td>
-      <td><%= covi.vote_logs.size %></td>
-      <td>
-        <%= link_to 'vote', vote_covid_path(covi.id), method: 'post' %>
-      </td>
-    </td> 
-  <% end %>
-</table>
+      <td>選項</td>
+      <td>票數</td>
+      <td></td>
+    </tr>
+
+    <% @covids.each do |covi| %>
+      <tr>
+        <td><%= covi.name %></td>
+        <td><%= covi.vote_logs.size %></td>
+        <td>
+          <%= link_to '投票', vote_covid_path(covi.id), method: 'post', class: 'button is-small is-primary' %>
+        </td>
+      </td> 
+    <% end %>
+  </table>
+</section>
